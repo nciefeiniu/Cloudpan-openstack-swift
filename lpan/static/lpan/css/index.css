@@ -1,0 +1,30 @@
+.dire{}
+.detail{position: relative; width: 90px; height: 100px; margin:10px 20px 10px 5px;z-index: 1; float: left;}
+.dire > .detail img{ width: 84px; height: 84px;}
+.img{ width: 56px;height: 56px; background-image: url("../images/Misc_54_f86ddc2.png"); color:transparent;}
+
+
+
+.page-wrapper{ position: relative;}
+/*body{ position:relative;}*/
+ul,li{ margin:0; padding:0; list-style:none; font-size:12px;}
+.popup_menu{position:absolute; z-index:90; border:1px solid #AEAEAE; padding:2px; width:80px;border-radius:5px;}
+.popup_menu a{ display:block; color:#325B8E; text-indent:12px; text-decoration:none; height:26px; line-height:25px; padding-right:5px;}
+.popup_menu a:hover{ background:#57B4E4; color:#fff; border-radius:5px;}
+
+.context-menu-list{position:absolute; z-index:90; border:1px solid #AEAEAE; padding:2px; width:80px;border-radius:5px;}
+
+
+    /*弹出框css*/
+    .remodal-bg.with-red-theme.remodal-is-opening,
+    .remodal-bg.with-red-theme.remodal-is-opened {
+      filter: none;
+    }
+
+    .remodal-overlay.with-red-theme {
+      background-color: #f44336;
+    }
+
+    .remodal.with-red-theme {
+      background: #fff;
+    }

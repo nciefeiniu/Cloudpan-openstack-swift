@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>L盘</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'lpan/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static 'lpan/css/metisMenu.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'lpan/css/sb-admin-2.css' %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static 'lpan/css/morris.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+{#    <link href="{% static 'lpan/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">#}
+    <!-- my self-->
+    <link href="{% static 'lpan/css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'lpan/css/remodal.css' %}" rel="stylesheet">
+    <link href="{% static 'lpan/css/remodal-default-theme.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/lpan/">lpan </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        id
+                    </a>
+
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        注销
+                    </a>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        xxxx
+                    </a>
+
+                    </ul>
+                </li>
+                <!-- /.dropdown -->
+{#                <li class="dropdown">#}
+{#                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                        xxxxx#}
+{#                    </a>#}
+{#                </li>#}
+            </ul>
+
+{#    界面    #}
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search" style="text-align: center">
+                           <a href="/lpan/create_container/">添加容器</a>
+                            <!-- /input-group -->
+                        </li>
+                        {% for container in containers %}
+                        <li style="height: 30px; font-size: 14px;">
+                            <span>
+                                <a href="/lpan/?dir={{ container.name }} " style="margin-left: 10px;"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>  {{ container.name }}</a>
+                            </span>
+                            <span>
+                                <a href="/lpan/delete_container/?con_name={{ container.name }}" style="float: right; margin-right: 11px;" >删除</a>
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12" style="border-bottom: 1px solid #e7e7e7;">
+                    <div style="width: 50%; float: left;">
+                        <span >
+                            <h2>所有文件</h2>
+                        </span>
+                    </div >
+                    <div style="width: 50%; float: left;">
+                        <span>
+                            <form enctype="multipart/form-data" action="/lpan/upload/?con_name={{ con_name }}" method="post">
+                                <div class="form-group">
+                                    <input type="file" id="exampleInputFile" name="exampleInputFile">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <button type="submit" class="btn btn-default">上传</button>
+
+                            </form>
+                        </span>
+                    </div>
+                                <hr size="2">
+                </div>
+                <!-- /.col-lg-12 -->
+
+               <!--页面 -->
+                <div class="dire">
+                    {% for t in test3 %}
+                    <div class="detail" id="detail" onmousedown="myname(event)" >
+                        <div class="img">{{ t.name }}</div>
+{#                        <img src="{% static 'lpan/images/Misc_54_f86ddc2.png' %}">#}
+                        <div class="text_name">
+                            {{ t.name }}
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+            <!-- /.row -->
+
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="{% static 'lpan/js/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'lpan/js/bootstrap.min.js' %}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{% static 'lpan/js/metisMenu.min.js' %}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{% static 'lpan/js/raphael.min.js' %}"></script>
+    <script src="{% static 'lpan/js/morris.min.js' %}"></script>
+    <script src="{% static 'lpan/js/morris-data.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'lpan/js/sb-admin-2.min.js' %}"></script>
+
+    <script src="{% static 'lpan/js/myMenu.js' %}"></script>
+    <script src="{% static 'lpan/js/jquery.contextMenu.js' %}"></script>
+    <script src="{% static 'lpan/js/remodal.js' %}"></script>
+
+</body>
+
+</html>
