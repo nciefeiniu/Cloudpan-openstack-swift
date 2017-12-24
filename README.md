@@ -3,6 +3,7 @@ swift个人云存储
 
 
 ###软件包：
+
 	- django 1.11
 	- python 2.7
 	- keystoneclient
