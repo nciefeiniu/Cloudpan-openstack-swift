@@ -3,6 +3,7 @@ swift个人云存储
 需要自己搭建对象存储swift
 
 swift单节点部署方法：[swift.md](https://github.com/nciefeiniu/Cloudpan-openstack-swift/blob/master/swift.md)
+<br>
 Ansible自动部署：[Ansible](https://github.com/ccollicutt/swiftacular)
 
 ---
